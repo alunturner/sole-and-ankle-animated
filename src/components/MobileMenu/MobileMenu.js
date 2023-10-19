@@ -12,26 +12,28 @@ import VisuallyHidden from '../VisuallyHidden';
 const MobileMenu = ({ isOpen, onDismiss }) => {
     return (
         <Wrapper isOpen={isOpen} onDismiss={onDismiss}>
-            <Backdrop /> 
+            <Backdrop />
             <Content aria-label="Menu">
-                <CloseButton onClick={onDismiss}>
-                    <Icon id="close" />
-                    <VisuallyHidden>Dismiss menu</VisuallyHidden>
-                </CloseButton>
-                <Filler />
-                <Nav>
-                    <NavLink href="/sale">Sale</NavLink>
-                    <NavLink href="/new">New&nbsp;Releases</NavLink>
-                    <NavLink href="/men">Men</NavLink>
-                    <NavLink href="/women">Women</NavLink>
-                    <NavLink href="/kids">Kids</NavLink>
-                    <NavLink href="/collections">Collections</NavLink>
-                </Nav>
-                <Footer>
-                    <SubLink href="/terms">Terms and Conditions</SubLink>
-                    <SubLink href="/privacy">Privacy Policy</SubLink>
-                    <SubLink href="/contact">Contact Us</SubLink>
-                </Footer>
+                <InnerWrapper>
+                    <CloseButton onClick={onDismiss}>
+                        <Icon id="close" />
+                        <VisuallyHidden>Dismiss menu</VisuallyHidden>
+                    </CloseButton>
+                    <Filler />
+                    <Nav>
+                        <NavLink href="/sale">Sale</NavLink>
+                        <NavLink href="/new">New&nbsp;Releases</NavLink>
+                        <NavLink href="/men">Men</NavLink>
+                        <NavLink href="/women">Women</NavLink>
+                        <NavLink href="/kids">Kids</NavLink>
+                        <NavLink href="/collections">Collections</NavLink>
+                    </Nav>
+                    <Footer>
+                        <SubLink href="/terms">Terms and Conditions</SubLink>
+                        <SubLink href="/privacy">Privacy Policy</SubLink>
+                        <SubLink href="/contact">Contact Us</SubLink>
+                    </Footer>
+                </InnerWrapper>
             </Content>
         </Wrapper>
     );
@@ -53,6 +55,11 @@ const slideIn = keyframes`
         transform: translateX(0%);
     }
 `
+const InnerWrapper = styled.div`
+display: flex;
+flex-direction: column;
+height: 100%;
+`
 
 const Wrapper = styled(DialogOverlay)`
   position: fixed;
@@ -62,7 +69,7 @@ const Wrapper = styled(DialogOverlay)`
   bottom: 0;
   background: transparent;
     display: flex;
-  justify-content: flex-end;
+    justify-content: flex-end;
 `;
 
 const Backdrop = styled.div`
@@ -81,8 +88,6 @@ const Content = styled(DialogContent)`
   width: 300px;
   height: 100%;
   padding: 24px 32px;
-  display: flex;
-  flex-direction: column;
     animation: ${slideIn} 500ms both cubic-bezier(0, 0.6, 0.32, 1.07);
 `;
 
