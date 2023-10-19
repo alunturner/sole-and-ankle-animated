@@ -45,6 +45,15 @@ const fadeIn = keyframes`
     }
 `
 
+const slideIn = keyframes`
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+`
+
 const Wrapper = styled(DialogOverlay)`
   position: fixed;
   top: 0;
