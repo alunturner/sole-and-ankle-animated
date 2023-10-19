@@ -59,6 +59,8 @@ const InnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
 height: 100%;
+animation: ${fadeIn} 1000ms both;
+animation-delay: 250ms;
 `
 
 const Wrapper = styled(DialogOverlay)`
