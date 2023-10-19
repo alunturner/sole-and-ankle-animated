@@ -29,13 +29,15 @@ const Text = styled.span`
     display: block;
     transition: transform 150ms;
     will-change: transform;
-`
-const MainText = styled(Text)`
-    transform: translateY(0%);
+    transform: translateY(var(--translate-from));
 
     ${Wrapper}:hover & {
-        transform: translateY(-100%);
+        transform: translateY(var(--translate-to));
     }
+`
+const MainText = styled(Text)`
+    --translate-from: 0%;
+    --translate-to: -100%;
 `;
 const HoverText = styled(Text)`
     position: absolute;
@@ -43,12 +45,9 @@ const HoverText = styled(Text)`
     left: 0;
     width: 100%;
     height: 100%;
-    transform: translateY(100%);
     font-weight: bold;
-
-    ${Wrapper}:hover & {
-        transform: translateY(0%);
-    }
+    --translate-from: 100%;
+    --translate-to: 0%;
 `;
 
 export default NavLink;
