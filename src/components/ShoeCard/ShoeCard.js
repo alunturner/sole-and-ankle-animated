@@ -77,12 +77,14 @@ display: block;
 width: 100%;
 transform: scale(1);
 transform-origin: 50% 80%;
-transition: transform 750ms;
+transition: transform 750ms, filter 750ms;
 will-change: transform;
+filter: brightness(80%);
 
 ${ImageWrapper}:hover & {
     transform: scale(1.1);
-    transition: transform 250ms;
+    transition: transform 250ms, filter 250ms;
+    filter: brightness(100%);
 }
 `;
 
