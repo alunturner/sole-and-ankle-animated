@@ -73,9 +73,10 @@ overflow: hidden;
 border-radius: 16px 16px 4px 4px;
 `;
 const Image = styled.img`
+display: block;
 width: 100%;
 transform: scale(1);
-transform-origin: 50% 66%;
+transform-origin: 50% 80%;
 transition: transform 750ms;
 
 ${ImageWrapper}:hover & {
