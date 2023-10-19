@@ -78,6 +78,7 @@ width: 100%;
 transform: scale(1);
 transform-origin: 50% 80%;
 transition: transform 750ms;
+will-change: transform;
 
 ${ImageWrapper}:hover & {
     transform: scale(1.1);
