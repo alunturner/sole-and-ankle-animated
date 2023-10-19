@@ -26,10 +26,16 @@ const Wrapper = styled.a`
 `;
 
 const Text = styled.span`
-    display: block
+    display: block;
+    transition: transform 150ms;
+    will-change: transform;
 `
 const MainText = styled(Text)`
-    
+    transform: translateY(0%);
+
+    ${Wrapper}:hover & {
+        transform: translateY(-100%);
+    }
 `;
 const HoverText = styled(Text)`
     position: absolute;
@@ -37,6 +43,12 @@ const HoverText = styled(Text)`
     left: 0;
     width: 100%;
     height: 100%;
+    transform: translateY(100%);
+    font-weight: bold;
+
+    ${Wrapper}:hover & {
+        transform: translateY(0%);
+    }
 `;
 
 export default NavLink;
