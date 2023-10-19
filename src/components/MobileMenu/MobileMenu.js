@@ -11,7 +11,8 @@ import VisuallyHidden from '../VisuallyHidden';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
     return (
-        <Overlay isOpen={isOpen} onDismiss={onDismiss}>
+        <Wrapper isOpen={isOpen} onDismiss={onDismiss}>
+            <Backdrop /> 
             <Content aria-label="Menu">
                 <CloseButton onClick={onDismiss}>
                     <Icon id="close" />
@@ -32,7 +33,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
                     <SubLink href="/contact">Contact Us</SubLink>
                 </Footer>
             </Content>
-        </Overlay>
+        </Wrapper>
     );
 };
 const fadeIn = keyframes`
@@ -44,19 +45,29 @@ const fadeIn = keyframes`
     }
 `
 
-const Overlay = styled(DialogOverlay)`
+const Wrapper = styled(DialogOverlay)`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--color-backdrop);
-  display: flex;
+  background: transparent;
+    display: flex;
   justify-content: flex-end;
-    animation: ${fadeIn} 750ms;
 `;
 
+const Backdrop = styled.div`
+   position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-backdrop);
+    animation: ${fadeIn} 750ms;
+`
+
 const Content = styled(DialogContent)`
+    position: relative;
   background: white;
   width: 300px;
   height: 100%;
