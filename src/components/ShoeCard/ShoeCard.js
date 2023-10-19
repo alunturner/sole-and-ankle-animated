@@ -67,6 +67,13 @@ const ShoeCard = ({
     </Link>
   );
 };
+const ImageWrapper = styled.div`
+position: relative;
+`;
+const Image = styled.img`
+width: 100%;
+border-radius: 16px 16px 4px 4px;
+`;
 
 const Link = styled.a`
   text-decoration: none;
@@ -75,14 +82,6 @@ const Link = styled.a`
 
 const Wrapper = styled.article``;
 
-const ImageWrapper = styled.div`
-  position: relative;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  border-radius: 16px 16px 4px 4px;
-`;
 
 const Row = styled.div`
   font-size: 1rem;
